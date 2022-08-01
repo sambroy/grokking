@@ -2,15 +2,15 @@ import torch
 from torch.optim import lr_scheduler
 from torch.utils import data
 from torch.utils.data import IterableDataset
-from datasets import AbstractDataset
-from utils import combine_logs
+from .datasets import AbstractDataset
+from .utils import combine_logs
 from torch.utils.data import DataLoader
 import torch.nn as nn
 from tqdm.auto import tqdm
 import wandb
 import hydra
 from omegaconf import DictConfig, OmegaConf
-from load_objs import load_item
+from .load_objs import load_item
 
 class GroupDataset(IterableDataset):
     def __init__(self, dataset: AbstractDataset, split: str):

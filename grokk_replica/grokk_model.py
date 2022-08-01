@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from transformer import Transformer
-from utils import causal_attn_mask, parameter_norm
+from .transformer import Transformer
+from .utils import causal_attn_mask, parameter_norm
 
 class GrokkModel(nn.Module):
     def __init__(self, transformer_config, vocab_size, output_size, device):
