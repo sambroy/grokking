@@ -3,13 +3,25 @@ defaults:
   - model: grokk_model
   - _self_
 
-# dataset:
-#   frac_train: 0.4
-#   p: 96
+dataset:
+  name: mod_subtract_dataset
+  frac_train: 0.4
+  p: 96
 
 model:
+  name: grokk_model
   transformer_config:
+    max_length: 5
+    heads: 4
+    hidden_dim: 128
+    attn_dim: 32
+    intermediate_dim: 512
+    num_blocks: 2
+    block_repeats: 1
+    dropout: 0.1
     pre_norm: true
+  checkpoint_path: null
+  strict_load: true
 
 train:
   num_workers: 0
